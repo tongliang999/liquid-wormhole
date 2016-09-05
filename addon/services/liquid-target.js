@@ -14,6 +14,7 @@ export default Ember.Service.extend({
       Ember.run(function() {
         target = {
           name: targetName,
+          containerName: item.containerName,
           items: Ember.A(),
           class: `${targetName}-liquid-target`,
           contextClass: item.get('targetClass'),

@@ -8,6 +8,7 @@ const { alias } = computed;
 const LiquidWormhole = Ember.Component.extend({
   to: null,
   classNames: ['liquid-wormhole-container'],
+  containerName: 'global',
 
   liquidTarget: alias('to'),
   liquidTargetService: service('liquid-target'),
@@ -25,7 +26,18 @@ const LiquidWormhole = Ember.Component.extend({
     this.get('liquidTargetService').appendItem(this._target, this);
   }),
 
-  didInsertElement() {
+  willRender() {
+    this._super(...arguments);
+    if (!this._didInsert) {
+      this._didInsert = true;
+      run.schedule('afterRender', () => {
+        if (this.isDestroyed) { return; }
+        this.didInsertElementx();
+      });
+    }
+  },
+
+  didInsertElementx() {
     const parentWormhole = this.nearestOfType(LiquidWormhole);
     const childWormholes = this.get('childWormholes');
     const liquidTargetService = this.get('liquidTargetService');
@@ -37,7 +49,7 @@ const LiquidWormhole = Ember.Component.extend({
       parentWormhole.get('childWormholes').unshiftObjects(childWormholes);
     } else {
       liquidTargetService.appendItem(this._target, this);
-      
+
       childWormholes.forEach((wormhole) => liquidTargetService.appendItem(wormhole._target, wormhole));
     }
 

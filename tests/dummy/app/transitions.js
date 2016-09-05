@@ -2,7 +2,7 @@ import { target, onOpenWormhole } from 'liquid-wormhole';
 
 export default function() {
   this.transition(
-    target('hello-world'),
+    target('hello-drawer'),
     onOpenWormhole(),
     this.use('to-left', { duration: 400, easing: [200, 22] }),
     this.reverse('to-right', { duration: 400, easing: [200, 22] })
@@ -13,7 +13,7 @@ export default function() {
     onOpenWormhole(),
     this.use('explode', {
       pick: '.flyout',
-      use: ['to-left', { duration: 400, easing: [200, 22] }]
+        use: ['to-left', { duration: 400, easing: [200, 22] }]
     }, {
       pick: '.modal-backdrop',
       use: 'fade'

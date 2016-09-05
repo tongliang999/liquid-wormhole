@@ -14,10 +14,12 @@
   <button {{action 'toggleHello'}} id="hello-world-button" class="btn btn-primary btn-embossed">
     Hello, World!
   </button>
+  {{liquid-target-container name="hello"}}
 
   {{#if showHello}}
     {{#liquid-wormhole
-      to="hello-world"
+      containerName="hello"
+      to="hello-drawer"
       class="container123"
     }}
     <div class="notification modal-content">
