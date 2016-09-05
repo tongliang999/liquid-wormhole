@@ -1,6 +1,6 @@
 {
-  "name": "liquid-wormhole",
-  "version": "1.1.2",
+  "name": "zbj-liquid-wormhole",
+  "version": "0.0.1",
   "description": "Wormholes with the power of Liquid Fire",
   "directories": {
     "doc": "doc",
