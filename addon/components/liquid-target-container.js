@@ -13,7 +13,7 @@ export default Ember.Component.extend({
   hasTargets: computed.bool('liquidTargetService.targets.length'),
   targets: computed('liquidTargetService.targets.[]', 'name', function() {
     let targets = this.get('liquidTargetService.targets');
-    return targets.filterBy('containerName', this.get('name'));
+    return targets.filterBy('containerName', this.get('name') || 'global');
   }),
   liquidTargetService: service('liquid-target')
 });

@@ -8,9 +8,9 @@ const { alias } = computed;
 const LiquidWormhole = Ember.Component.extend({
   to: null,
   classNames: ['liquid-wormhole-container'],
-  containerName: 'global',
 
   liquidTarget: alias('to'),
+  containerName: alias('to'),
   liquidTargetService: service('liquid-target'),
 
   nodes: computed(function() {

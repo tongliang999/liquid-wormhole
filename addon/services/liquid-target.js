@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-const { computed } = Ember;
+const { computed, get } = Ember;
 
 export default Ember.Service.extend({
   targets: computed(() => Ember.A()),
@@ -14,7 +14,7 @@ export default Ember.Service.extend({
       Ember.run(function() {
         target = {
           name: targetName,
-          containerName: item.containerName,
+          containerName: get(item, 'containerName'),
           items: Ember.A(),
           class: `${targetName}-liquid-target`,
           contextClass: item.get('targetClass'),
