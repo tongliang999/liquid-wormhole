@@ -4,7 +4,7 @@
 var filterInitializers = require('fastboot-filter-initializers');
 
 module.exports = {
-  name: 'liquid-wormhole',
+  name: 'zbj-liquid-wormhole',
 
   preconcatTree: function(tree) {
     return filterInitializers(tree, this.app.name);

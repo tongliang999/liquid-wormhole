@@ -1,1 +1,1 @@
-export { default } from 'liquid-wormhole/components/liquid-target-container';
+export { default } from 'zbj-liquid-wormhole/components/liquid-target-container';

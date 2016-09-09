@@ -1,1 +1,1 @@
-export { default, initialize } from 'liquid-wormhole/instance-initializers/browser/liquid-target-container';
+export { default, initialize } from 'zbj-liquid-wormhole/instance-initializers/browser/liquid-target-container';
