@@ -7,7 +7,7 @@ export function initialize(instance) {
     liquidTargetContainer = instance.container.lookup('component:liquid-target-container');
   }
 
-  // liquidTargetContainer.appendTo(instance.rootElement);
+  liquidTargetContainer.appendTo(instance.rootElement);
 }
 
 export default {

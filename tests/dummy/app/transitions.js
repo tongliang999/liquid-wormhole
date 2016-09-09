@@ -1,4 +1,4 @@
-import { target, onOpenWormhole } from 'liquid-wormhole';
+import { target, onOpenWormhole } from 'zbj-liquid-wormhole';
 
 export default function() {
   this.transition(
