@@ -6,7 +6,7 @@ const { service } = inject;
 const { alias } = computed;
 
 const LiquidWormhole = Ember.Component.extend({
-  to: null,
+  to: 'liquid-wormhole',
   targetsTo: 'global',
   classNames: ['liquid-wormhole-container'],
 
